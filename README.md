@@ -38,6 +38,9 @@ Outlet => Any children routes of body will be rendered over here.
  - You should not be able to access other routes without login
  - If token is not present, redirect user to login page
  - Logout
- - Profile Page
+ - FGet the feed and add the feed in the store
+ - Build the user card on feed
+ - Gender : Dropdown (H.W.)
+ - 
 
  401 => Unauthorised
