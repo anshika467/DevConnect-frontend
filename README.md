@@ -18,3 +18,21 @@ Body
 
 Outlet => Any children routes of body will be rendered over here.
 
+**Node - 16**
+-------------
+
+ - Create a login page
+ - Install Axios
+ - CORS - Install cors in backend => add middleware with configurations: origin, credentials: true
+ - Whenever you're making API call so pass axois => {withCredentials : true}
+ - { Get cookie in Application - Browser:
+    Backend  : cors configuration - origin, credentials : true
+    Frontend : withCredential : true }
+  
+ - Install redux Toolkit - https://redux-toolkit.js.org/tutorials/quick-start
+ - configureStore => Provider => createSlice => add reducer to store
+ - Add redux devTools in chrome
+ - Login and see if your data is coming properly in the store
+ - NavBar should update as soon as user logs in
+ - Refactor our code to add constants file + create a components folder
+ 
