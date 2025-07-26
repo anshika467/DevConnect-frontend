@@ -44,5 +44,6 @@ Outlet => Any children routes of body will be rendered over here.
  - Edit Profile Feature
  - Show Toast on save of profile
  - Create Connections Page
+ - See all my Connection Requests
 
  401 => Unauthorised
