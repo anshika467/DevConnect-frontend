@@ -28,17 +28,23 @@ const Feed = () => {
   if (!feed) return;
 
   if (feed.length === 0)
-    return <h1 className="flex justify-center my-10">No more users are available in the feed!!!</h1>;
+    return (
+      <h1 className="flex justify-center my-10">
+        No more users are available in the feed!!!
+      </h1>
+    );
 
   return (
-    <div className="h-full">
-      {feed.map((user) => {
-        return (
-          <div key={user._id} className="flex justify-center my-5">
-            <UserCard user={user} />
-          </div>
-        );
-      })}
+    <div className="h-screen flex flex-col items-center gap-4">
+      <div className="carousel carousel-center bg-neutral rounded-box max-w-md space-x-4 p-4 my-3">
+        {feed.map((user) => {
+          return (
+            <div key={user._id} className="flex justify-center my-5">
+              <UserCard user={user} />
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
