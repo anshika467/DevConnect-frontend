@@ -31,7 +31,7 @@ const Feed = () => {
     return <h1 className="flex justify-center my-10">No more users are available in the feed!!!</h1>;
 
   return (
-    <div>
+    <div className="h-full">
       {feed.map((user) => {
         return (
           <div key={user._id} className="flex justify-center my-5">

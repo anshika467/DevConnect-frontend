@@ -42,10 +42,10 @@ const Requests = () => {
   if (!requests) return;
 
   if (requests.length === 0)
-    return <h1 className="flex justify-center my-10">No Requests Found</h1>;
+    return <h1 className="flex text-3xl justify-center my-10">No Requests Found</h1>;
 
   return (
-    <div className="flex flex-col items-center my-10 gap-4">
+    <div className="h-screen flex flex-col items-center my-10 gap-4">
       <h1 className="text-bold font-semibold text-4xl mb-3">
         Connection Requests
       </h1>
