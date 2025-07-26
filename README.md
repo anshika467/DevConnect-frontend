@@ -45,5 +45,11 @@ Outlet => Any children routes of body will be rendered over here.
  - Show Toast on save of profile
  - Create Connections Page
  - See all my Connection Requests
+ - Accept/Reject Request
+ - Send/Ignore the user from the feed
+
+ - Remaining:
+  - Signup New User
+  - E2E Testing
 
  401 => Unauthorised

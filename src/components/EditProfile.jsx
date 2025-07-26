@@ -81,9 +81,9 @@ const EditProfile = ({ user }) => {
                     <option defaultChecked={true} disabled={true}>
                       Select Gender
                     </option>
-                    <option>male</option>
-                    <option>female</option>
-                    <option>other</option>
+                    <option value="male">male</option>
+                    <option value="female">female</option>
+                    <option value="other">other</option>
                   </select>
                 </fieldset>
                 <fieldset className="fieldset">
