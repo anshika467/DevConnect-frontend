@@ -41,6 +41,8 @@ Outlet => Any children routes of body will be rendered over here.
  - FGet the feed and add the feed in the store
  - Build the user card on feed
  - Gender : Dropdown (H.W.)
- - 
+ - Edit Profile Feature
+ - Show Toast on save of profile
+ - Create Connections Page
 
  401 => Unauthorised

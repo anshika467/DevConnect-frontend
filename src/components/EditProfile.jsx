@@ -97,9 +97,9 @@ const EditProfile = ({ user }) => {
                 <fieldset className="fieldset">
                   <legend className="fieldset-legend">Photo URL</legend>
                   <input
+                    value={photoUrl}
                     type="text"
                     className="input"
-                    value={photoUrl}
                     onChange={(e) => setPhotoUrl(e.target.value)}
                   />
                 </fieldset>
