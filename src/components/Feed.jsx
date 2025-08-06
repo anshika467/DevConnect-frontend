@@ -35,8 +35,8 @@ const Feed = () => {
     );
 
   return (
-    <div className="h-screen flex flex-col items-center gap-4">
-      <div className="carousel carousel-center bg-neutral rounded-box max-w-md space-x-4 p-4 my-3">
+    <div className="h-full flex flex-col items-center gap-4">
+      <div>
         {feed.map((user) => {
           return (
             <div key={user._id} className="flex justify-center my-5">
