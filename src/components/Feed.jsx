@@ -18,6 +18,11 @@ const Feed = () => {
       dispatch(addFeed(res?.data?.data));
     } catch (err) {
       console.error(err.message);
+      // Alert Message - In case database error occurs...
+      if (!alertShown.current) {
+        alert("Database Error: Unable to fetch feed data.");
+        alertShown.current = true;
+      }
     }
   };
 
@@ -25,7 +30,12 @@ const Feed = () => {
     getFeed();
   });
 
-  if (!feed) return;
+  if (!feed)
+    return (
+      <h1 className="text-center text-3xl font-bold my-10">
+        Please Wait... Your Feed will be fetched shortly!!
+      </h1>
+    );
 
   if (feed.length === 0)
     return (
