@@ -1,4 +1,4 @@
-# DevTinder
+# DevConnect
 
  - Create React App - Config Tailwind 
  - Install DaisyUI - NavBar (Seperate Component)
