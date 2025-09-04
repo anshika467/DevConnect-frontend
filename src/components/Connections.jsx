@@ -16,6 +16,7 @@ const Connections = () => {
 
       dispatch(addConnections(res?.data?.data));
     } catch (err) {
+      //Handle Error Case
       console.error(err);
     }
   };
@@ -41,9 +42,9 @@ const Connections = () => {
           >
             <div>
               <img
+                alt="User_photo"
                 className="w-20 h-20 rounded-full"
                 src={photoUrl}
-                alt="User_photo"
               />
             </div>
             <div className="text-left mx-6">

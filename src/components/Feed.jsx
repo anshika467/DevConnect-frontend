@@ -1,13 +1,14 @@
 import axios from "axios";
 import { BASE_URL } from "../utils/constants";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { addFeed } from "../utils/feedSlice";
 import UserCard from "./UserCard";
 
 const Feed = () => {
   const feed = useSelector((store) => store.feed);
   const dispatch = useDispatch();
+  const alertShown = useRef(false);
 
   const getFeed = async () => {
     try {
@@ -28,8 +29,9 @@ const Feed = () => {
 
   useEffect(() => {
     getFeed();
-  });
+  }, []);
 
+  // <---------------------------------- Error ---------------------------------->
   if (!feed)
     return (
       <h1 className="text-center text-3xl font-bold my-10">
@@ -37,7 +39,8 @@ const Feed = () => {
       </h1>
     );
 
-  if (feed.length === 0)
+  // <-------------------------------- Empty Feed -------------------------------->
+  if (feed.length <= 0)
     return (
       <h1 className="flex justify-center my-10">
         No more users are available in the feed!!!
@@ -45,17 +48,12 @@ const Feed = () => {
     );
 
   return (
-    <div className="h-full flex flex-col items-center gap-4">
-      <div>
-        {feed.map((user) => {
-          return (
-            <div key={user._id} className="flex justify-center my-5">
-              <UserCard user={user} />
-            </div>
-          );
-        })}
+
+    feed && (
+      <div className="h-full flex justify-center my-10">
+        <UserCard user={feed[0]} />
       </div>
-    </div>
+    )
   );
 };
 
