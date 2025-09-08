@@ -5,7 +5,7 @@
  - NavBar.jsx
  - Installed React Router Dom
  - Creater Browser Router > Routes > Route > Body > RouteChildren
- - Create an Outle in your Body component
+ - Create an Outlet in your Body component
  - Create a Footer Component
 
 Body
@@ -53,3 +53,9 @@ Outlet => Any children routes of body will be rendered over here.
   - E2E Testing
 
  401 => Unauthorised
+
+**Node - 17**
+-------------
+
+ - Changed Feed UI -> One Slide at a time
+ - 

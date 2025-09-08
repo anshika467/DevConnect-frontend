@@ -4,6 +4,7 @@ import axios from "axios";
 import { BASE_URL } from "../utils/constants";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import Toast from "./Toast";
 
 const EditProfile = ({ user }) => {
   const [firstName, setFirstName] = useState(user.firstName);
@@ -29,7 +30,7 @@ const EditProfile = ({ user }) => {
       setShowToast(true);
       setTimeout(() => {
         setShowToast(false);
-      }, 2000);
+      }, 3000);
     } catch (err) {
       setError(err?.response?.data || "Something Went Wrong!!!");
     }
@@ -117,13 +118,20 @@ const EditProfile = ({ user }) => {
           user={{ firstName, lastName, age, gender, about, photoUrl }}
         />
       </div>
-      {showToast && (
+      {/* {showToast && (
         <div className="toast toast-top toast-center mt-6 animate-bounce">
           <div className="alert alert-success">
             <span>Profile saved successfully.</span>
           </div>
         </div>
-      )}
+      )} */}
+
+      <Toast
+        message="Profile saved successfully"
+        type="success"
+        isVisible={showToast}
+        onClose={() => setShowToast(false)}
+      />
     </>
   );
 };
