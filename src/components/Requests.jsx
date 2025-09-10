@@ -3,6 +3,7 @@ import { BASE_URL } from "../utils/constants";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addRequest, removeRequest } from "../utils/RequestSlice";
+import Loader from "./Loader";
 
 const Requests = () => {
   const dispatch = useDispatch();
@@ -39,7 +40,7 @@ const Requests = () => {
     fetchRequests();
   }, []);
 
-  if (!requests) return;
+  if (!requests) return <Loader />;
 
   if (requests.length === 0)
     return <h1 className="h-screen flex text-3xl justify-center my-10">No Requests Found</h1>;
