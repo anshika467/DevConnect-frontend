@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { BASE_URL } from "../utils/constants";
 import { useDispatch, useSelector } from "react-redux";
 import { addConnections } from "../utils/ConnectionSlice";
+import Loader from "./Loader";
 
 const Connections = () => {
   const dispatch = useDispatch();
@@ -25,7 +26,7 @@ const Connections = () => {
     fetchConnections();
   }, []);
 
-  if (!connections) return;
+  if (!connections) return <Loader />;
 
   if (connections.length === 0) return <h1 className=" flex text-3xl justify-center my-10">No Connections Found</h1>;
 

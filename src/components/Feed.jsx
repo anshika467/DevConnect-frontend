@@ -4,11 +4,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useRef } from "react";
 import { addFeed } from "../utils/feedSlice";
 import UserCard from "./UserCard";
+import Loader from "./Loader";
 
 const Feed = () => {
   const feed = useSelector((store) => store.feed);
   const dispatch = useDispatch();
-  const alertShown = useRef(false);
 
   const getFeed = async () => {
     try {
@@ -19,11 +19,6 @@ const Feed = () => {
       dispatch(addFeed(res?.data?.data));
     } catch (err) {
       console.error(err.message);
-      // Alert Message - In case database error occurs...
-      if (!alertShown.current) {
-        alert("Database Error: Unable to fetch feed data.");
-        alertShown.current = true;
-      }
     }
   };
 
@@ -33,11 +28,7 @@ const Feed = () => {
 
   // <---------------------------------- Error ---------------------------------->
   if (!feed)
-    return (
-      <h1 className="text-center text-3xl font-bold my-10">
-        Please Wait... Your Feed will be fetched shortly!!
-      </h1>
-    );
+    return <Loader />;
 
   // <-------------------------------- Empty Feed -------------------------------->
   if (feed.length <= 0)
