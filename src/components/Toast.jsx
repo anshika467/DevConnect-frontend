@@ -9,7 +9,7 @@ const Toast = ({ message, type, isVisible, onClose }) => {
 
   return (
     <div
-      className={`toast toast-top toast-center mt-6 -translate-x-1/6 rounded-lg shadow-lg p-4 text-white transform transition-all duration-700 ease-in-out
+      className={`toast toast-top toast-center mt-6 -translate-x-1/2 rounded-lg shadow-lg p-4 text-white transform transition-all duration-700 ease-in-out
         ${typeClasses[type] || "bg-gray-700"}
         ${
           isVisible

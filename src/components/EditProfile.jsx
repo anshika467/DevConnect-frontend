@@ -74,12 +74,11 @@ const EditProfile = ({ user }) => {
                 <fieldset className="fieldset">
                   <legend className="fieldset-legend">Gender</legend>
                   <select
-                    defaultValue="Select Gender"
                     className="select select-md"
                     value={gender}
                     onChange={(e) => setGender(e.target.value)}
                   >
-                    <option defaultChecked={true} disabled={true}>
+                    <option value="" disabled={true}>
                       Select Gender
                     </option>
                     <option value="male">male</option>
