@@ -69,7 +69,8 @@ Outlet => Any children routes of body will be rendered over here.
    > icacls "devConnect-secret.pem" /grant:r "$($env:USERNAME):(R)"
 
  - **Command to log into the Ubuntu machine:** 
-   > `ssh -i "devConnect-secret.pem" ubuntu@ec2-13-221-85-116.compute-1.amazonaws.com`
+   > `ssh -i "<secret>.pem" ubuntu@<IP>.compute-1.amazonaws.com`
+   <!-- > `ssh -i "devConnect-secret.pem" ubuntu@ec2-13-221-85-116.compute-1.amazonaws.com` -->
  - Install Node version *22.18.0* - Version of Backend
    > curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 
@@ -131,3 +132,22 @@ Outlet => Any children routes of body will be rendered over here.
          proxy_cache_bypass $http_upgrade;
       }
       ```
+
+ - **Reflect Changes after Deployment**
+    - `git pull` : Get the changes
+    - `npm run build` : Create the latest dist folder
+    - `sudo scp -r dist/* /var/www/html/` : Copy entire contents of dist in that folder.
+    - Change `PUBLIC_IP` in MongoDB Server (If New IP)
+    - Change `PUBLIC_IP` in  nginx config => `sudo nano /etc/nginx/sites-available/default`
+      
+      ```
+      server_name <NEW_PUBLIC_IP>
+      ```
+    - **Restart ngnix** : `sudo systemctl restart nginx` : *Do it on root*
+    - If *error* comes for **unit reload** : `sudo systemctl daemon-reload`
+    - Run the server
+      > **_npm run start_**
+
+      > **_pm2 start npm --name DevConnect -- start_**
+
+      
